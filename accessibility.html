@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visual Design</title>
+    <title>Accessibility in Web Development</title>
 </head>
 <body>
     <nav>
@@ -28,15 +28,15 @@
         </ul>
     </nav>
 
-    <p>Visual Design is the combination of typography, Color theory, graphics, animation, page layout, and more to help build visually appealing websites..</p>
+    <p>In web development, accessibility refers to web content and a UI (user interface) that can be understood, navigated, and interacted with by a broad audience. This includes people with visual, auditory, mobility, or cognitive disabilities.</p>
 
     
 
 <p style="text-align: center;">
-    <a href="#a">Text-Align property</a> | 
-    <a href="#b">Width and Height properties</a> | 
-    <a href="#c">Strong, u (underline), em(emphasize), s(strikethrough), and hr(Horizontal Line) tags</a> | 
-    <a href="#d">Background-color</a> | 
+    <a href="#a">Adding a Text Alternative to Images</a> | 
+    <a href="#b">When Alt Text Should be Left Blank</a> | 
+    <a href="#c">The Correct way to Order Header Elements (h1, h2, etc)</a> | 
+    <a href="#d">Using the Main Element</a> | 
     <a href="#e">Adjusting the size of a H(heading) and p(paragraph) element</a> | 
     <a href="#f">Box-Shadow property</a> | 
     <a href="#g">Opacity</a> | 
@@ -61,10 +61,15 @@
     <a href="#z">Bezier Curves</a>
 </p>
     <h3>
-        <a name="a"></a>A</h3>
+        <a name="a"></a>Adding a Text Alternative to Images</h3>
             <ul>
-                <li>Your first point goes here</li>
-                <li>Add more items to your list by adding <li> before and </li> after</li>
+                <li>alt text describes the image's content and provides a text-alternative for it. An alt attribute helps in cases where the image fails to load or can't be seen by a user. Search engines also use it to understand what an image contains to include it in search results. </li>
+                <li>Example:  <pre>
+                          <code>
+                              <!-- https://mothereff.in/html-entities Plug in source code and wrap in code and pre tags to get code snippets -->
+                            &#x3C;img src=&#x22;importantLogo.jpeg&#x22; alt=&#x22;Company logo&#x22;&#x3E;
+                          </code>
+                        </pre></li>
                 <li><a href="#top">Back to top</a></li>
             </ul>
 <h3><a name="b"></a>B</h3>
