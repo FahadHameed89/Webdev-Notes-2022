@@ -25,3 +25,13 @@ year = 2022
 myAge = int(input('How old are you? '))
 birth_year = year - myAge
 print('You were born in ' + str(birth_year))
+
+
+print("My name is Jim and it's nice to meet you!")
+
+distance_travelled = 3
+start_time = 10
+type = 'AM'
+name = 'John'
+
+print(f'{name} is a loser, he wakes up at {start_time}{type} and only runs for {distance_travelled} kilometers ')
