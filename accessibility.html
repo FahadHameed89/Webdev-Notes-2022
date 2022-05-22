@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="accessibility.css">
     <title>Accessibility in Web Development</title>
 </head>
 <body>
@@ -40,287 +41,48 @@
         </ul>
     </nav>
     <!-- Navigation Ends -->
-
-    <p>In web development, accessibility refers to web content and a UI (user interface) that can be understood, navigated, and interacted with by a broad audience. This includes people with visual, auditory, mobility, or cognitive disabilities.</p>
-
-    
-
-<p style="text-align: center;">
-    <a href="#a">Adding a Text Alternative to Images</a> | 
-    <!-- 
-Add a Text Alternative to Images for Visually Impaired Accessibility
-You've likely seen an alt attribute on an img tag in other challenges. alt text describes the image's content and provides a text-alternative for it. An alt attribute helps in cases where the image fails to load or can't be seen by a user. Search engines also use it to understand what an image contains to include it in search results. Here's an example:
-
-<img src="importantLogo.jpeg" alt="Company logo">
-People with visual impairments rely on screen readers to convert web content to an audio interface. They won't get information if it's only presented visually. For images, screen readers can access the alt attribute and read its contents to deliver key information.
-
-Good alt text provides the reader a brief description of the image. You should always include an alt attribute on your image. Per HTML5 specification, this is now considered mandatory.
-
-
-
-     -->
-    <a href="#b">When Alt Text Should be Left Blank</a> | 
-    <!-- 
-        Know When Alt Text Should be Left Blank
-In the last challenge, you learned that including an alt attribute when using img tags is mandatory. However, sometimes images are grouped with a caption already describing them, or are used for decoration only. In these cases, alt text may seem redundant or unnecessary.
-
-When an image is already explained with text content or does not add meaning to a page, the img still needs an alt attribute, but it can be set to an empty string. Here's an example:
-
-<img src="visualDecoration.jpeg" alt="">
-Background images usually fall under the 'decorative' label as well. However, they are typically applied with CSS rules, and therefore not part of the markup screen readers process.
-
-Note: For images with a caption, you may still want to include alt text since it helps search engines catalog the image's content.
-     -->
-    <a href="#c">The Correct way to Order Header Elements (h1, h2, etc)</a> | 
-    <!-- 
-
-        Use Headings to Show Hierarchical Relationships of Content
-Headings (h1 through h6 elements) are workhorse tags that help provide structure and labeling to your content. Screen readers can be set to read only the headings on a page so the user gets a summary. This means it is important for the heading tags in your markup to have semantic meaning and relate to each other, not be picked merely for their size values.
-
-Semantic meaning means that the tag you use around content indicates the type of information it contains.
-
-If you were writing a paper with an introduction, a body, and a conclusion, it wouldn't make much sense to put the conclusion as a subsection of the body in your outline. It should be its own section. Similarly, the heading tags in a webpage need to go in order and indicate the hierarchical relationships of your content.
-
-Headings with equal (or higher) rank start new implied sections, headings with lower rank start subsections of the previous one.
-
-As an example, a page with an h2 element followed by several subsections labeled with h4 elements would confuse a screen reader user. With six choices, it's tempting to use a tag because it looks better in a browser, but you can use CSS to edit the relative sizing.
-
-One final point, each page should always have one (and only one) h1 element, which is the main subject of your content. This and the other headings are used in part by search engines to understand the topic of the page.
-     -->
-    <a href="#d">Using the Main Element</a> | 
-    <!-- 
-        Jump Straight to the Content Using the main Element
-HTML5 introduced several new elements that give developers more options while also incorporating accessibility features. These tags include main, header, footer, nav, article, and section, among others.
-
-By default, a browser renders these elements similar to the humble div. However, using them where appropriate gives additional meaning to your markup. The tag name alone can indicate the type of information it contains, which adds semantic meaning to that content. Assistive technologies can access this information to provide better page summary or navigation options to their users.
-
-The main element is used to wrap (you guessed it) the main content, and there should be only one per page. It's meant to surround the information related to your page's central topic. It's not meant to include items that repeat across pages, like navigation links or banners.
-
-The main tag also has an embedded landmark feature that assistive technology can use to navigate to the main content quickly. If you've ever seen a "Jump to Main Content" link at the top of a page, using the main tag automatically gives assistive devices that functionality.
-     -->
-    <a href="#e">Artcles and Sections</a> | 
-    <!-- 
-Wrap Content in the article Element
-article is another one of the new HTML5 elements that add semantic meaning to your markup. article is a sectioning element and is used to wrap independent, self-contained content. The tag works well with blog entries, forum posts, or news articles.
-
-Determining whether content can stand alone is usually a judgment call, but you can use a couple of simple tests. Ask yourself if you removed all surrounding context, would that content still make sense? Similarly, for text, would the content hold up if it were in an RSS feed?
-
-Remember that folks using assistive technologies rely on organized, semantically meaningful markup to better understand your work.
-
-Note: The section element is also new with HTML5, and has a slightly different semantic meaning than article. An article is for standalone content, and a section is for grouping thematically related content. They can be used within each other, as needed. For example, if a book is the article, then each chapter is a section. When there's no relationship between groups of content, then use a div.
-
-<div> - groups content <section> - groups related content <article> - groups independent, self-contained content
-
-     -->
-    <a href="#f">Header Landmark</a> |
-     <!--
-         Make Screen Reader Navigation Easier with the header Landmark
-The next HTML5 element that adds semantic meaning and improves accessibility is the header tag. It's used to wrap introductory information or navigation links for its parent tag and works well around content that's repeated at the top on multiple pages.
-
-header shares the embedded landmark feature you saw with main, allowing assistive technologies to quickly navigate to that content.
-
-Note: The header is meant for use in the body tag of your HTML document. It is different than the head element, which contains the page's title, meta information, etc.
-       -->
-    <a href="#g">The Nav Element</a> | 
-    <!-- 
-        The nav element is another HTML5 item with the embedded landmark feature for easy screen reader navigation. This tag is meant to wrap around the main navigation links in your page.
-
-If there are repeated site links at the bottom of the page, it isn't necessary to markup those with a nav tag as well. Using a footer (covered in the next challenge) is sufficient.
-
-
-     -->
-    <a href="#h">The Footer Element</a> | 
-    <!-- 
-        Make Screen Reader Navigation Easier with the footer Landmark
-Similar to header and nav, the footer element has a built-in landmark feature that allows assistive devices to quickly navigate to it. It's primarily used to contain copyright information or links to related documents that usually sit at the bottom of a page.
-     -->
-    <a href="#i">The Audio Tag</a> | 
-    <!-- 
-        Improve Accessibility of Audio Content with the audio Element
-HTML5's audio element gives semantic meaning when it wraps sound or audio stream content in your markup. Audio content also needs a text alternative to be accessible to people who are deaf or hard of hearing. This can be done with nearby text on the page or a link to a transcript.
-
-The audio tag supports the controls attribute. This shows the browser default play, pause, and other controls, and supports keyboard functionality. This is a boolean attribute, meaning it doesn't need a value, its presence on the tag turns the setting on.
-     -->
-    <a href="#j">Hover states</a> | 
-    <a href="#k">Changing Relative Position</a> | 
-    <a href="#l">Moving a Relatively Positioned Element with Offsets</a> | 
-    <a href="#m">Lock an Element to it's Parent with Absolute Positioning</a> | 
-    <a href="#n">Lock and element to the Browser Window with Fixed Positioning</a> | 
-    <a href="#o">Push elements left or right with the Float Property</a> | 
-    <a href="#p">Change the position of overlapping elements with the z-index</a> | 
-    <a href="#q">Center an element horizontally using the margin property</a> | 
-    <a href="#r">Complimentary and Tertiary Colors</a> | 
-    <a href="#s">Saturation, Hue, Tone</a> | 
-    <a href="#t">Gradients, Linear and Patterns</a> | 
-    <a href="#u">Textures using Subtble Patterns</a> | 
-    <a href="#v">CSS Transformation - Scale, Skew, Rotate</a> | 
-    <a href="#w">Create More Complex Graphics using CSS and HTML</a> | 
-    <a href="#x">Keyframes and Animation Properties</a> | 
-    <a href="#y">Movement using Animation, Fill using Animation, Hearbeat Example</a> | 
-    <a href="#z">Bezier Curves</a>
-</p>
-    <h3>
-        <a name="a"></a>Adding a Text Alternative to Images</h3>
-            <ul>
-                <li>alt text describes the image's content and provides a text-alternative for it. An alt attribute helps in cases where the image fails to load or can't be seen by a user. Search engines also use it to understand what an image contains to include it in search results. </li>
-                <li>Example:  <pre>
-                          <code>
-                              <!-- https://mothereff.in/html-entities Plug in source code and wrap in code and pre tags to get code snippets -->
-                            &#x3C;img src=&#x22;importantLogo.jpeg&#x22; alt=&#x22;Company logo&#x22;&#x3E;
-                          </code>
-                        </pre></li>
-                <li><a href="#top">Back to top</a></li>
-            </ul>
-<h3><a name="b"></a>B</h3>
-<ul>
-<li>Your first point goes here</li>
-<li>Add more items to your list by adding <li> before and </li> after</li>
-<li><a href="#top">Back to top</a></li>
-</ul>
-<h3><a name="c"></a>C</h3>
-<ul>
-<li>Your first point goes here</li>
-<li>Add more items to your list by adding <li> before and </li> after</li>
-<li><a href="#top">Back to top</a></li>
-</ul>
-<h3><a name="d"></a>D</h3>
-<ul>
-<li>Your first point goes here</li>
-<li>Add more items to your list by adding <li> before and </li> after</li>
-<li><a href="#top">Back to top</a></li>
-</ul>
-<h3><a name="e"></a>E</h3>
-<ul>
-<li>Your first point goes here</li>
-<li>Add more items to your list by adding <li> before and </li> after</li>
-<li><a href="#top">Back to top</a></li>
-</ul>
-<h3><a name="f"></a>F</h3>
-<ul>
-<li>Your first point goes here</li>
-<li>Add more items to your list by adding <li> before and </li> after</li>
-<li><a href="#top">Back to top</a></li>
-</ul>
-<h3><a name="g"></a>G</h3>
-<ul>
-<li>Your first point goes here</li>
-<li>Add more items to your list by adding <li> before and </li> after</li>
-<li><a href="#top">Back to top</a></li>
-</ul>
-<h3><a name="h"></a>H</h3>
-<ul>
-<li>Your first point goes here</li>
-<li>Add more items to your list by adding <li> before and </li> after</li>
-<li><a href="#top">Back to top</a></li>
-</ul>
-<h3><a name="i"></a>I</h3>
-<ul>
-<li>Your first point goes here</li>
-<li>Add more items to your list by adding <li> before and </li> after</li>
-<li><a href="#top">Back to top</a></li>
-</ul>
-<h3><a name="j"></a>J</h3>
-<ul>
-<li>Your first point goes here</li>
-<li>Add more items to your list by adding <li> before and </li> after</li>
-<li><a href="#top">Back to top</a></li>
-</ul>
-<h3><a name="k"></a>K</h3>
-<ul>
-<li>Your first point goes here</li>
-<li>Add more items to your list by adding <li> before and </li> after</li>
-<li><a href="#top">Back to top</a></li>
-</ul>
-<h3><a name="l"></a>L</h3>
-<ul>
-<li>Your first point goes here</li>
-<li>Add more items to your list by adding <li> before and </li> after</li>
-<li><a href="#top">Back to top</a></li>
-</ul>
-<h3><a name="m"></a>M</h3>
-<ul>
-<li>Your first point goes here</li>
-<li>Add more items to your list by adding <li> before and </li> after</li>
-<li><a href="#top">Back to top</a></li>
-</ul>
-<h3><a name="n"></a>N</h3>
-<ul>
-<li>Your first point goes here</li>
-<li>Add more items to your list by adding <li> before and </li> after</li>
-<li><a href="#top">Back to top</a></li>
-</ul>
-<h3><a name="o"></a>O</h3>
-<ul>
-<li>Your first point goes here</li>
-<li>Add more items to your list by adding <li> before and </li> after</li>
-<li><a href="#top">Back to top</a></li>
-</ul>
-<h3><a name="p"></a>P</h3>
-<ul>
-<li>Your first point goes here</li>
-<li>Add more items to your list by adding <li> before and </li> after</li>
-<li><a href="#top">Back to top</a></li>
-</ul>
-<h3><a name="q"></a>Q</h3>
-<ul>
-<li>Your first point goes here</li>
-<li>Add more items to your list by adding <li> before and </li> after</li>
-<li><a href="#top">Back to top</a></li>
-</ul>
-<h3><a name="r"></a>R</h3>
-<ul>
-<li>Your first point goes here</li>
-<li>Add more items to your list by adding <li> before and </li> after</li>
-<li><a href="#top">Back to top</a></li>
-</ul>
-<h3><a name="s"></a>S</h3>
-<ul>
-<li>Your first point goes here</li>
-<li>Add more items to your list by adding <li> before and </li> after</li>
-<li><a href="#top">Back to top</a></li>
-</ul>
-<h3><a name="t"></a>T</h3>
-<ul>
-<li>Your first point goes here</li>
-<li>Add more items to your list by adding <li> before and </li> after</li>
-<li><a href="#top">Back to top</a></li>
-</ul>
-<h3><a name="u"></a>U</h3>
-<ul>
-<li>Your first point goes here</li>
-<li>Add more items to your list by adding <li> before and </li> after</li>
-<li><a href="#top">Back to top</a></li>
-</ul>
-<h3><a name="v"></a>V</h3>
-<ul>
-<li>Your first point goes here</li>
-<li>Add more items to your list by adding <li> before and </li> after</li>
-<li><a href="#top">Back to top</a></li>
-</ul>
-<h3><a name="w"></a>W</h3>
-<ul>
-<li>Your first point goes here</li>
-<li>Add more items to your list by adding <li> before and </li> after</li>
-<li><a href="#top">Back to top</a></li>
-</ul>
-<h3><a name="x"></a>X</h3>
-<ul>
-<li>Your first point goes here</li>
-<li>Add more items to your list by adding <li> before and </li> after</li>
-<li><a href="#top">Back to top</a></li>
-</ul>
-<h3><a name="y"></a>Y</h3>
-<ul>
-<li>Your first point goes here</li>
-<li>Add more items to your list by adding <li> before and </li> after</li>
-<li><a href="#top">Back to top</a></li>
-</ul>
-<h3><a name="z"></a>Z</h3>
-<ul>
-<li>Your first point goes here</li>
-<li>Add more items to your list by adding <li> before and </li> after</li>
-<li><a href="#top">Back to top</a></li>
-</ul>
-<p>
+    <table>
+        <thead>
+          <tr>
+            <th>CODE</th>
+            <th>STOCK</th>
+            <th>CAP</th>
+            <th>INCH</th>
+            <th>BOX TYPE</th>
+          </tr>
+        <thead>
+        <tbody>
+          <tr>
+            <td>CES-9000</td>
+            <td>50mt</td>
+            <td>9mm</td>
+            <td>1/2"</td>
+            <td>Kangal / Coil</td>
+          </tr>
+             <tr>
+            <td>CES-9000</td>
+            <td>50mt</td>
+            <td>9mm</td>
+            <td>1/2"</td>
+            <td>Kangal / Coil</td>
+          </tr>
+             <tr>
+            <td>CES-9000</td>
+            <td>50mt</td>
+            <td>9mm</td>
+            <td>1/2"</td>
+            <td>Kangal / Coil</td>
+          </tr>
+             <tr>
+            <td>CES-9000</td>
+            <td>50mt</td>
+            <td>9mm</td>
+            <td>1/2"</td>
+            <td>Kangal / Coil</td>
+          </tr>
+        </tbody>
+      <table/>
+        
+      <blockquote> Responsive Table </blockquote>
 </body>
 </html>
